@@ -1,0 +1,194 @@
+$primary-color: #eb6a7f;
+$dark-color: #000;
+
+@import "./normalize.scss";
+@import "./font.scss";
+@import "node_modules/spectre.css/src/spectre";
+@import "node_modules/spectre.css/src/spectre-exp";
+@import "node_modules/spectre.css/src/spectre-icons";
+@import "node_modules/animate.css/animate.min";
+
+body, #app{
+	font-family: "SF Display" !important;
+	width: 100%;
+}
+
+.container{
+	width: 330px;
+	margin: auto;
+}
+
+.container.wide{
+	width: 75%;
+}
+
+.form-input{
+	border-radius: 4px;
+	height: auto;
+	transition: all .3s;
+	font-family: 'SF Text';
+	color: #333;
+	border: 1px solid #d6d6d6;
+}
+
+.btn:not(.s-circle){
+	border-radius: 6px;
+	transition: all .3s;
+}
+
+.btn:not(.btn-action){
+	padding: 6px 12px;
+	height: auto;
+}
+
+.btn:not(.btn-action).pill{
+	border-radius: 50px;
+	padding-left: 14px;
+	padding-right: 14px;
+}
+
+.flower{
+	height: 280px;
+	width: 100%;
+	background: url("~@/assets/flower.jpg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-origin: border-box;
+	z-index: -999;
+}
+
+.center{
+	text-align: center;
+}
+
+.h0{
+	font-size: 56px;
+	font-weight: 600;
+}
+
+.h0, .h1, .h2{
+	font-weight: 600;
+}
+
+.h3, .h4, .h5{
+	font-weight: 400;
+}
+
+.navbar + .container{
+	padding-top: 60px;
+}
+
+div .black{
+	color: $light-color;
+	background-color: $dark-color;
+
+	input, .form-input{
+		background-color: transparent;
+		color: $light-color;
+	}
+
+	.form-input{
+		.has-error, .has-success{
+			background: transparent;
+		}
+	}
+}
+
+.avatar{
+	font-weight: 600;
+}
+
+
+
+@keyframes fadeInRightSmall {
+	from {
+		opacity: 0;
+		transform: translate3d(40px, 0, 0);
+	}
+
+	to {
+		opacity: 1;
+		transform: translate3d(0%, 0, 0);
+	}
+}
+
+.fadeInRightSmall {
+	animation-name: fadeInRightSmall;
+}
+
+
+@keyframes fadeInDownSmall {
+	from {
+		opacity: 0;
+		transform: translate3d(0, -40px, 0);
+	}
+
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0%, 0);
+	}
+}
+
+.fadeInDownSmall {
+	animation-name: fadeInDownSmall;
+	animation-timing-function: ease-out;
+}
+
+
+@keyframes fadeInDownSmallRotateX {
+	from {
+		opacity: 0;
+		transform: translate3d(0, -40px, 0) rotateX(-35deg);
+	}
+
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0%, 0) rotateX(0deg);
+	}
+}
+
+.fadeInDownSmall.rotate {
+	animation-name: fadeInDownSmallRotateX;
+	animation-timing-function: ease-out;
+}
+
+
+
+
+@media (min-width: 1280px) {  // 1280 <= x
+	.container.wide{
+		width: 40%;
+	}
+}
+
+@media (min-width: 960px) { // 960 <= x < 1280
+	.container.wide{
+		width: 45%;
+	}
+}
+
+@media (min-width: 840px){ // 840 <= x < 960
+	.container.wide{
+		width: 70%;
+	}
+}
+
+@media (max-width: 840px) { // x <= 840
+	.container.wide{
+		width: 90%;
+	}
+}
+
+@media (max-width: 600px) { // 480 < x <= 600
+	.container.wide{
+		width: 90%;
+	}
+}
+
+@media (max-width: 480px) { // x <= 480
+	.container.wide{
+		width: 90%;
+	}
+}
+
