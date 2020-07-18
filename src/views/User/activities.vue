@@ -12,7 +12,7 @@
 				<div class="text-gray"> {{activity.end_date}} </div>
 			</div>
 			<div class="column col-3">
-				<button class="btn btn-primary">view</button>
+				<button class="btn btn-primary" @click="routerTo('/activity')">view</button>
 			</div>
 		</div>
 	</div>
@@ -37,7 +37,10 @@ export default{
 			}).catch(error => {
 				console.log(error)
 			})
-		}
+		},
+		routerTo(addr) {
+            this.$router.push(addr);
+        }
 	},
 	mounted() {
         this.getallactivities()
