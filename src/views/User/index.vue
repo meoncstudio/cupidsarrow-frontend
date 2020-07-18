@@ -4,7 +4,7 @@
 		<div class="banner black">
 			<div class="container wide animated fadeIn">
 				<div class="columns">
-					<div class="column col-sm-12 col-9">
+					<div class="column col-sm-9 col-9">
 						<div class="h1 user-subtitle" :class="{ 'animated fadeInDownSmall rotate faster' : !this.smallWidth}">{{this.$store.state.user.username}}</div>
 						<div class="h5 user-subtitle animated fadeInDownSmall rotate faster" v-if="!this.smallWidth">You are signed in by {{this.$store.state.user.mail}}</div>
 						<div class="h5 user-subtitle" v-if="this.smallWidth">{{this.$store.state.user.mail}}</div>
@@ -12,7 +12,7 @@
 						<div class="h5 admin-subtitle animated fadeInDownSmall rotate faster" v-if="!this.smallWidth">Welcome, administrator {{this.$store.state.user.username}}</div>
 						<div class="h5 admin-subtitle" v-if="this.smallWidth">{{this.$store.state.user.username}}</div>
 					</div>
-					<div class="column hide-md col-3">
+					<div class="column col-sm-3 col-3">
 						<button class="btn btn-primary pill sign-out" @click="signout">Sign Out</button>
 					</div>
 				</div>
