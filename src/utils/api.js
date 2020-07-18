@@ -88,6 +88,13 @@ export function GetAllActivities() {
     })
 }
 
+export function GetActivityMembers(aid) {
+    return service.request({
+        method: 'get',
+        url: '/api/activities/members/' + aid,
+    })
+}
+
 export function SendVeriCode(mail) {
     return service.request({
         method: 'post',

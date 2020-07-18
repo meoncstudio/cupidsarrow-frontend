@@ -5,9 +5,9 @@
 			<div class="container wide animated fadeIn">
 				<div class="columns">
 					<div class="column col-sm-12 col-9">
-						<div class="h1"></div>
-						<div class="h5 user-subtitle"></div>
-						<div class="h5 admin-subtitle">Welcome to administration center.</div>
+						<div class="h1">{{activityData.title}}</div>
+						<div class="h5 user-subtitle">{{activityData.subtitle}}</div>
+						<div class="h5 admin-subtitle">{{activityData.subtitle}}</div>
 					</div>
 					<div class="column hide-md col-3">
 					</div>
@@ -21,14 +21,6 @@
                 <div class="panel">
 
                     <div class="card">
-                        <div class="card-header">
-                            <div class="card-title h3">Microsoft</div>
-                            <div class="card-subtitle text-gray">Software and hardware</div>
-                        </div>
-
-
-
-
                         <div class="carousel">
                         <!-- carousel locator -->
                         <input class="carousel-locator" id="slide-1" type="radio" name="carousel-radio" hidden="" checked="">
@@ -85,32 +77,35 @@
                     </nav>
 
                     <div class="panel-body" v-if="this.page == 'Details'">
+
                         <div class="tile tile-centered">
-                        <div class="tile-content">
-                            <div class="tile-title text-bold">E-mail</div>
-                            <div class="tile-subtitle">bruce.banner@hulk.com</div>
+                            <div class="tile-content">
+                                <div class="tile-title text-bold">Start Date</div>
+                                <div class="tile-subtitle"> {{activityData.start_date}} </div>
+                            </div>
+                            <div class="tile-action">
+                                <button class="btn btn-link btn-action btn-lg tooltip tooltip-left" data-tooltip="Edit E-mail"><i class="icon icon-edit"></i></button>
+                            </div>
                         </div>
-                        <div class="tile-action">
-                            <button class="btn btn-link btn-action btn-lg tooltip tooltip-left" data-tooltip="Edit E-mail"><i class="icon icon-edit"></i></button>
-                        </div>
-                        </div>
+
                         <div class="tile tile-centered">
-                        <div class="tile-content">
-                            <div class="tile-title text-bold">Skype</div>
-                            <div class="tile-subtitle">bruce.banner</div>
+                            <div class="tile-content">
+                                <div class="tile-title text-bold">End Date</div>
+                                <div class="tile-subtitle"> {{activityData.end_date}} </div>
+                            </div>
+                            <div class="tile-action">
+                                <button class="btn btn-link btn-action btn-lg"><i class="icon icon-edit"></i></button>
+                            </div>
                         </div>
-                        <div class="tile-action">
-                            <button class="btn btn-link btn-action btn-lg"><i class="icon icon-edit"></i></button>
-                        </div>
-                        </div>
+
                         <div class="tile tile-centered">
-                        <div class="tile-content">
-                            <div class="tile-title text-bold">Location</div>
-                            <div class="tile-subtitle">Dayton, Ohio</div>
-                        </div>
-                        <div class="tile-action">
-                            <button class="btn btn-link btn-action btn-lg"><i class="icon icon-edit"></i></button>
-                        </div>
+                            <div class="tile-content">
+                                <div class="tile-title text-bold">Location</div>
+                                <div class="tile-subtitle"> {{activityData.location}} </div>
+                            </div>
+                            <div class="tile-action">
+                                <button class="btn btn-link btn-action btn-lg"><i class="icon icon-edit"></i></button>
+                            </div>
                         </div>
 
                     </div>
@@ -118,23 +113,11 @@
 
                     <div class="panel-body" v-if="this.page == 'Member'">
                          <div class="form-autocomplete-input form-input" >
-                            <div class="chip animated tada faster"><img class="avatar avatar-sm" src="@/assets/avatar/1.jpg" alt="Avatar">Steve Rogers</div>
-                            <div class="chip animated tada faster"><img class="avatar avatar-sm" src="@/assets/avatar/1.jpg" alt="Avatar">Steve Rogers</div>
-                            <div class="chip animated tada faster"><img class="avatar avatar-sm" src="@/assets/avatar/1.jpg" alt="Avatar">Steve Rogers</div>
-                            <div class="chip animated tada faster"><img class="avatar avatar-sm" src="@/assets/avatar/1.jpg" alt="Avatar">Steve Rogers</div>
-                            <div class="chip animated tada faster"><img class="avatar avatar-sm" src="@/assets/avatar/1.jpg" alt="Avatar">Steve Rogers</div>
-                            <div class="chip animated tada faster"><img class="avatar avatar-sm" src="@/assets/avatar/1.jpg" alt="Avatar">Steve Rogers</div>
-                            <div class="chip animated tada faster"><img class="avatar avatar-sm" src="@/assets/avatar/1.jpg" alt="Avatar">Steve Rogers</div>
-                            <div class="chip animated tada faster"><img class="avatar avatar-sm" src="@/assets/avatar/1.jpg" alt="Avatar">Steve Rogers</div>
-                            <div class="chip animated tada faster"><img class="avatar avatar-sm" src="@/assets/avatar/1.jpg" alt="Avatar">Steve Rogers</div>
-                            <div class="chip animated tada faster"><img class="avatar avatar-sm" src="@/assets/avatar/1.jpg" alt="Avatar">Steve Rogers</div>
-                            <div class="chip animated tada faster"><img class="avatar avatar-sm" src="@/assets/avatar/1.jpg" alt="Avatar">Steve Rogers</div>
-                            <div class="chip animated tada faster"><img class="avatar avatar-sm" src="@/assets/avatar/1.jpg" alt="Avatar">Steve Rogers</div>
-                            <div class="chip animated tada faster"><img class="avatar avatar-sm" src="@/assets/avatar/1.jpg" alt="Avatar">Steve Rogers</div>
-                            <div class="chip animated tada faster"><img class="avatar avatar-sm" src="@/assets/avatar/1.jpg" alt="Avatar">Steve Rogers</div>
-                            <div class="chip animated tada faster"><img class="avatar avatar-sm" src="@/assets/avatar/1.jpg" alt="Avatar">Steve Rogers</div>
-                            <div class="chip animated tada faster"><img class="avatar avatar-sm" src="@/assets/avatar/1.jpg" alt="Avatar">Steve Rogers</div>
-                            <div class="chip animated tada faster"><img class="avatar avatar-sm" src="@/assets/avatar/1.jpg" alt="Avatar">Steve Rogers</div>
+                            <div class="chip animated tada faster" v-for="member in membersArray" :key="member.uid">
+                                <img class="avatar avatar-sm" :src="member.avatar" alt="Avatar">
+                                {{ member.username }}
+                                <a href="#" class="btn btn-clear" aria-label="Close" role="button"></a>
+                            </div>
                         </div>
                     </div>
 
@@ -181,14 +164,15 @@
 </template>
 
 <script>
-import { GetActivities } from "@/utils/api"
+import { GetActivities, GetActivityMembers } from "@/utils/api"
 
 export default {
     name: "Activitiy",
     data() {
         return {
             page: 'Details',
-            activityData: {}
+            activityData: {},
+            membersArray: []
         }
     },
     methods: {
@@ -202,10 +186,19 @@ export default {
             }).catch(error => {
                 console.log(error)
             })
+        },
+        getactivityMembers(aid) {
+            GetActivityMembers(aid).then(res =>{
+                this.membersArray = res.data
+                console.log(res)
+            }).catch(error => {
+                console.log(error)
+            })
         }
     },
     mounted() {
         this.getactivities(this.$route.query.aid);
+        this.getactivityMembers(this.$route.query.aid);
     }
 }
 </script>
