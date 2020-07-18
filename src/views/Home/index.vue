@@ -10,19 +10,77 @@
 			</div>
 		</div>
 
-		<div class="container"></div>
+		
+		<div class="containter">
+			<h2>Activities</h2>
+			<div class="columns animated fadeIn faster" v-for="activity in activitiesArray" :key="activity.uid">
+				<div class="column col-3">
+					<img :src="activity.img" class="img-responsive">
+				</div>
+				<div class="column col-3">
+					<div class="h5">{{activity.title}}</div>
+					<div class="text-gray"> {{activity.subtitle}} </div>
+				</div>
+				<div class="column col-5">
+					<div class="text-gray"> {{activity.end_date}} </div>
+				</div>
+				<div class="column col-1">
+					<button class="btn btn-primary" @click="routerTo('/activity?aid=' + activity.aid)">view</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="columns"></div>
+		</div>
+
+		<div class="container">
+			<div class="columns">
+				<div class="column col-4">
+					<h4>Cupids</h4>
+				</div>
+
+				<div class="column col-4">
+					<h4>Meonc</h4>
+				</div>
+
+				<div class="column col-4">
+					<h4>UofT</h4>
+				</div>
+			</div>
+		</div>
 	
 	</div>
 </template>
 
 <script>
 import Carousel from "@/components/Carousel";
+import { GetAllActivities } from "@/utils/api"
 export default {
     name: "Home",
     components: {
         Carousel
-    },
-    mounted() {
+	},
+	data() {
+		return {
+			activitiesArray: []
+		}
+	},
+    methods: {
+		getallactivities() {
+			GetAllActivities().then(res => {
+				console.log(res)
+				this.activitiesArray = res.data;
+			}).catch(error => {
+				console.log(error)
+			})
+		},
+		routerTo(addr) {
+            this.$router.push(addr);
+        }
+	},
+	mounted() {
+        this.getallactivities()
     }
 }
 </script>
