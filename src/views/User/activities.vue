@@ -12,7 +12,7 @@
 				<div class="text-gray"> {{activity.end_date}} </div>
 			</div>
 			<div class="column col-3">
-				<button class="btn btn-primary" @click="routerTo('/activity')">view</button>
+				<button class="btn btn-primary" @click="routerTo('/activity?aid=' + activity.aid)">view</button>
 			</div>
 		</div>
 	</div>

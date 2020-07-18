@@ -181,18 +181,31 @@
 </template>
 
 <script>
+import { GetActivities } from "@/utils/api"
 
 export default {
     name: "Activitiy",
     data() {
         return {
-            page: 'Details'
+            page: 'Details',
+            activityData: {}
         }
     },
     methods: {
         routerTo(addr) {
             this.page = addr;
+        },
+        getactivities(aid) {
+            GetActivities(aid).then(res =>{
+                this.activityData = res.data
+                console.log(res)
+            }).catch(error => {
+                console.log(error)
+            })
         }
+    },
+    mounted() {
+        this.getactivities(this.$route.query.aid);
     }
 }
 </script>
