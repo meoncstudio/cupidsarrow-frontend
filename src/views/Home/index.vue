@@ -14,17 +14,17 @@
 		<div class="containter">
 			<h2>Activities</h2>
 			<div class="columns animated fadeIn faster" v-for="activity in activitiesArray" :key="activity.uid">
-				<div class="column col-3">
+				<div class="column col-3 col-sm-3">
 					<img :src="activity.img" class="img-responsive">
 				</div>
-				<div class="column col-3">
+				<div class="column col-3 col-sm-3">
 					<div class="h5">{{activity.title}}</div>
 					<div class="text-gray"> {{activity.subtitle}} </div>
 				</div>
-				<div class="column col-5">
+				<div class="column col-5 col-sm-3">
 					<div class="text-gray"> {{activity.end_date}} </div>
 				</div>
-				<div class="column col-1">
+				<div class="column col-1 col-sm-3">
 					<button class="btn btn-primary" @click="routerTo('/activity?aid=' + activity.aid)">view</button>
 				</div>
 			</div>
