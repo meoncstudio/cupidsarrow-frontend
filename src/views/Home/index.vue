@@ -37,15 +37,15 @@
 		<div class="container">
 			<div class="columns">
 				<div class="column col-4">
-					<h4>Cupids</h4>
+					<div>Cupids</div>
 				</div>
 
 				<div class="column col-4">
-					<h4>Meonc</h4>
+					<div>Cupids</div>
 				</div>
 
 				<div class="column col-4">
-					<h4>UofT</h4>
+					<div>Cupids</div>
 				</div>
 			</div>
 		</div>
