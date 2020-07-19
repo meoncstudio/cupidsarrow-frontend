@@ -5,28 +5,35 @@
 				<div class="flower animated fadeIn"></div>
 				<div class="text animated fadeInUp">
 					<div class="h0">CupidsArrow</div>
-					<div class="h3">This is subtitle</div>
+					<div class="h3">Univeristy of Toronto</div>
 				</div>
 			</div>
 		</div>
 
 		
 		<div class="containter">
-			<h2>Activities</h2>
-			<div class="columns animated fadeIn faster" v-for="activity in activitiesArray" :key="activity.uid">
-				<div class="column col-3 col-sm-3">
-					<img :src="activity.img" class="img-responsive">
+			<h1 class="center">Activities</h1>
+			<div v-for="activity in activitiesArray" :key="activity.uid">
+				<br>
+				<div class="columns animated fadeIn faster" >
+
+					<div class="column col-4 col-sm-12 col-ml-auto">
+						<img :src="activity.img" class="img-responsive">
+					</div>
+
+					<div class="column col-3 col-sm-6 col-mx-auto">
+						<div class="h2">{{activity.title}}</div>
+						<div class="text-gray"> {{activity.subtitle}} </div>
+                        <div class="text-gray"> Start Date: {{activity.start_date}} </div>
+						<div class="text-gray"> End Date: {{activity.end_date}} </div>
+						<br>
+						<div class="columns">
+							<button class="btn btn-primary" @click="routerTo('/activity?aid=' + activity.aid)">view</button>
+						</div>
+					</div>
+
 				</div>
-				<div class="column col-3 col-sm-3">
-					<div class="h5">{{activity.title}}</div>
-					<div class="text-gray"> {{activity.subtitle}} </div>
-				</div>
-				<div class="column col-5 col-sm-3">
-					<div class="text-gray"> {{activity.end_date}} </div>
-				</div>
-				<div class="column col-1 col-sm-3">
-					<button class="btn btn-primary" @click="routerTo('/activity?aid=' + activity.aid)">view</button>
-				</div>
+				<br>
 			</div>
 		</div>
 
