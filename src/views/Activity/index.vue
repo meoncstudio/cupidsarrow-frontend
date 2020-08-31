@@ -34,22 +34,22 @@
                             <figure class="carousel-item">
                             <label class="item-prev btn btn-action btn-lg" for="slide-4"><i class="icon icon-arrow-left"></i></label>
                             <label class="item-next btn btn-action btn-lg" for="slide-2"><i class="icon icon-arrow-right"></i></label>
-                            <img class="img-responsive rounded" src="@/assets/img/img2.jpg" alt="macOS Yosemite Wallpaper">
+                            <img class="img-responsive rounded" :src="activityData.car1" alt="Cupids Image">
                             </figure>
                             <figure class="carousel-item">
                             <label class="item-prev btn btn-action btn-lg" for="slide-1"><i class="icon icon-arrow-left"></i></label>
                             <label class="item-next btn btn-action btn-lg" for="slide-3"><i class="icon icon-arrow-right"></i></label>
-                            <img class="img-responsive rounded" src="@/assets/img/img1.jpg" alt="macOS Yosemite Wallpaper">
+                            <img class="img-responsive rounded" :src="activityData.car2" alt="Cupids Image">
                             </figure>
                             <figure class="carousel-item">
                             <label class="item-prev btn btn-action btn-lg" for="slide-2"><i class="icon icon-arrow-left"></i></label>
                             <label class="item-next btn btn-action btn-lg" for="slide-4"><i class="icon icon-arrow-right"></i></label>
-                            <img class="img-responsive rounded" src="@/assets/img/img2.jpg" alt="macOS El Capitan Wallpaper">
+                            <img class="img-responsive rounded" :src="activityData.car3" alt="Cupids Image">
                             </figure>
                             <figure class="carousel-item">
                             <label class="item-prev btn btn-action btn-lg" for="slide-3"><i class="icon icon-arrow-left"></i></label>
                             <label class="item-next btn btn-action btn-lg" for="slide-1"><i class="icon icon-arrow-right"></i></label>
-                            <img class="img-responsive rounded" src="@/assets/img/img1.jpg" alt="macOS El Capitan Wallpaper">
+                            <img class="img-responsive rounded" :src="activityData.car4" alt="Cupids Image">
                             </figure>
                         </div>
                         <!-- carousel navigation -->
