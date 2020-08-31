@@ -27,9 +27,8 @@
                         <div class="text-gray"> Start Date: {{activity.start_date}} </div>
 						<div class="text-gray"> End Date: {{activity.end_date}} </div>
 						<br>
-						<div class="columns">
-							<button class="btn btn-primary" @click="routerTo('/activity?aid=' + activity.aid)">view</button>
-						</div>
+						<a class="linktext" @click="routerTo('/activity?aid=' + activity.aid)">View ></a>
+						<!-- <button class="btn" @click="routerTo('/activity?aid=' + activity.aid)">view</button> -->
 					</div>
 
 				</div>
@@ -38,7 +37,12 @@
 		</div>
 
 		<div class="container">
-			<div class="columns"></div>
+			<div class="columns">
+				<br>
+				<br>
+				<br>
+				<br>
+			</div>
 		</div>
 
 		<div class="container">
@@ -48,11 +52,11 @@
 				</div>
 
 				<div class="column col-4">
-					<div>Cupids</div>
+					<div>UofT</div>
 				</div>
 
 				<div class="column col-4">
-					<div>Cupids</div>
+					<div>Meonc</div>
 				</div>
 			</div>
 		</div>
@@ -97,6 +101,11 @@ export default {
 .h0{
 	letter-spacing: -.002em;
 	line-height: 1.09091;
+}
+
+.linktext{
+	color: #0066cc;
+	font-size: 20px;
 }
 
 .hero{
