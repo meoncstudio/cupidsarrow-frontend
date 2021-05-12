@@ -16,7 +16,7 @@
     "core-js": "^3.6.5",
     "enums": "^1.0.3",
     "js-cookie": "^2.2.1",
-    "nodemailer": "^6.4.3",
+    "nodemailer": "^6.4.16",
     "spectre.css": "^0.5.8",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
